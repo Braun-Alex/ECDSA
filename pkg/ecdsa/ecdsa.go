@@ -18,7 +18,7 @@ func Sign(message string, privateKey *big.Int) (r, s *big.Int) {
 	// Computing kG
 	kPoint := ec.ScalarMult(*k, ec.BasePointGGet())
 	// Computing r = kG.x (mod n)
-	r.Mod(kPoint.X, basePointOrder)
+	r = new(big.Int).Mod(kPoint.X, basePointOrder)
 	// If r == 0, then repeat generating of session key
 	if r.Cmp(big.NewInt(0)) == 0 {
 		r, s = Sign(message, privateKey)
@@ -32,7 +32,7 @@ func Sign(message string, privateKey *big.Int) (r, s *big.Int) {
 	buffer.Mul(privateKey, r)
 	buffer.Add(hashDecimal, buffer)
 	k.ModInverse(k, basePointOrder)
-	s.Mul(buffer, k)
+	s = new(big.Int).Mul(buffer, k)
 	s.Mod(s, basePointOrder)
 	// If s == 0, then repeat signing
 	if s.Cmp(big.NewInt(0)) == 0 {

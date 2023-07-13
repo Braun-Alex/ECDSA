@@ -1,4 +1,4 @@
-module ECDSA
+module github.com/Braun-Alex/ECDSA
 
 go 1.19
 
