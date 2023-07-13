@@ -1,5 +1,5 @@
-github.com/Braun-Alex/elliptic-wrapper v0.0.0-20230705120542-43a863a06c95 h1:hqjViTcP217pqombMnczA7X00Qzxiv6fne+bg1Dv6t8=
-github.com/Braun-Alex/elliptic-wrapper v0.0.0-20230705120542-43a863a06c95/go.mod h1:9oy8yQDum1ihET9JpiWkUYnz3C9brIbqavWiVXiKkmU=
+github.com/Braun-Alex/elliptic-wrapper v0.0.0-20230713133540-6cdeeb7c4d99 h1:CoirMXiy7jHcxz9SuGHkr3P0G/F+BEHBK8PMhmCpR3k=
+github.com/Braun-Alex/elliptic-wrapper v0.0.0-20230713133540-6cdeeb7c4d99/go.mod h1:9oy8yQDum1ihET9JpiWkUYnz3C9brIbqavWiVXiKkmU=
 golang.org/x/crypto v0.11.0 h1:6Ewdq3tDic1mg5xRO4milcWCfMVQhI4NkqWWvqejpuA=
 golang.org/x/crypto v0.11.0/go.mod h1:xgJhtzW8F9jGdVFWZESrid1U1bjeNy4zgy5cRr/CIio=
 golang.org/x/sys v0.10.0 h1:SqMFp9UcQJZa+pmYuAKjd9xq1f0j5rLcDIk0mj4qAsA=
