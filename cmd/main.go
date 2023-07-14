@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/Braun-Alex/ECDSA/pkg/ecdsa"
 	"github.com/Braun-Alex/ECDSA/pkg/keypair"
-	"github.com/Braun-Alex/elliptic-wrapper/pkg/ec"
+	"github.com/Braun-Alex/ECDSA/pkg/utils"
 )
 
 func main() {
@@ -19,11 +19,12 @@ func main() {
 		answer = "no"
 	}
 	fmt.Print("*********** Keypair and message ***********\n")
-	fmt.Printf("Private key: %s\n", privateKey.Text(ec.HexEncoding))
-	fmt.Printf("Public key: %s\n", ec.ElCPointToString(publicKey))
+	fmt.Printf("Private key: %s\n", utils.SerializePrivateKey(privateKey))
+	fmt.Printf("Public key: %s\n", utils.SerializePublicKey(publicKey))
 	fmt.Print("Message: \"", message, "\"\n")
 	fmt.Print("********* ECDSA *********\n")
-	fmt.Printf("Parameter R: %s\n", r.Text(ec.HexEncoding))
-	fmt.Printf("Parameter S: %s\n", r.Text(ec.HexEncoding))
+	sigR, sigS := utils.SerializeSignature(r, s)
+	fmt.Printf("Parameter R: %s\n", sigR)
+	fmt.Printf("Parameter S: %s\n", sigS)
 	fmt.Print("Signature is valid: ", answer)
 }

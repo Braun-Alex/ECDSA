@@ -73,6 +73,8 @@ func Verify(message string, publicKey ec.ElCPoint, r, s *big.Int) bool {
 	if xPoint.X == nil {
 		return false
 	}
+	// Computing v = X.x (mod n)
 	v := new(big.Int).Mod(xPoint.X, basePointOrder)
+	// Accept signature only and only if v == r
 	return v.Cmp(r) == 0
 }
